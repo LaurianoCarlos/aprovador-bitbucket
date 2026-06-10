@@ -1,0 +1,14 @@
+EXTENSÃO: APROVADOR AUTOMÁTICO DE PULL REQUESTS — VERSÃO 2.1.0
+
+Agora é possível escolher quantas URLs processar em cada ciclo.
+
+Exemplo:
+- Quantidade escolhida: 3
+- Existem 10 URLs visíveis no Google Chat
+- A extensão processará somente as 3 últimas URLs visíveis
+
+Regras:
+- Quantidade permitida: de 1 a 100
+- URLs repetidas são ignoradas
+- O campo fica bloqueado enquanto o serviço estiver ativo
+- A interface aparece somente ao clicar no ícone da extensão

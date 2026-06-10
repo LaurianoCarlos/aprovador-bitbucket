@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Aprovador automático de Pull Requests",
+  "version": "2.1.0",
+  "description": "Processa sequencialmente as últimas URLs de Pull Request visíveis no Google Chat, com quantidade configurável.",
+  "permissions": [
+    "tabs",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://chat.google.com/*",
+    "https://bitbucket.org/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chat.google.com/*"
+      ],
+      "js": [
+        "chat-content.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://bitbucket.org/*/*/pull-requests/*"
+      ],
+      "js": [
+        "bitbucket-content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Aprovador automático",
+    "default_popup": "popup.html"
+  }
+}
